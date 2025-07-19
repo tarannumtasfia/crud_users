@@ -10,7 +10,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://yourfrontenddomain.vercel.app'],
+  origin: ['http://localhost:3000', 'https://crud-frontend-ten-virid.vercel.app'],
   credentials: true,
 }));
 app.use(express.json());  // <-- use built-in JSON parser
@@ -27,6 +27,6 @@ mongoose.connect(MONGOURL).then(() => {
     console.log("Error connecting to MongoDB:", err);
 });
 
-
+// app.use('/api/user', route);
 app.use('/api/auth', authRoutes);
 app.use('/api/authuser', authUserRoutes);
