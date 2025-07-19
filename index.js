@@ -9,7 +9,10 @@ import authUserRoutes from './routes/authUserRoute.js';
 dotenv.config();
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: ['http://localhost:3000', 'https://yourfrontenddomain.vercel.app'],
+  credentials: true,
+}));
 app.use(express.json());  // <-- use built-in JSON parser
 
 const PORT = process.env.PORT || 5000;
